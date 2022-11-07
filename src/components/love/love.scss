@@ -1,0 +1,62 @@
+:root{
+  --red: red;
+}
+.love{
+  border: 1px solid  var(--red);
+}
+.box{
+  width: 200px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.but{
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.but.active{
+  border: 1px solid red;
+}
+.delete{
+  width: 80px;
+  padding: 10px 10px 10px 10px;
+  background: red;
+  cursor: pointer;
+  
+}
+.inp{
+ width: 200px;
+ height: 50px;
+ padding: 10px;
+
+}
+.form {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.name, .tel{
+  width: 100%;
+  height: 25px;
+  margin-top: 10px;
+}
+.but{
+  width: 50px;
+  height: 20px;
+  background: red;
+  color: black;
+}
+.but1{
+padding: 10px;
+background: var(--red);
+cursor: pointer;
+margin-right: 10px;
+}
