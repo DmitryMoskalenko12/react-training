@@ -2,6 +2,7 @@ import './App.scss';
 import Love from '../love/Love';
 import DragAndDrop from '../draganddrop/DragAndDrop';
 import Upload from '../upload/Upload';
+import DragAndDropCards from '../draganddropcards/DragAndDropCards';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
      <Love/>
      <DragAndDrop/>
      <Upload/>
+     <DragAndDropCards/>
     </div>  
   );
 }

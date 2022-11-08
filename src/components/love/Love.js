@@ -84,9 +84,9 @@ console.log('ger')
 const res = onFilterChange(onSearch(data, search), filter); 
 
 
-/* лента водопад */
+ /* лента водопад  */
 
-/* useEffect( () => {
+/*  useEffect( () => {
   if (fetching) {
     axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`)
     .then(res => {
@@ -110,8 +110,8 @@ function scroll() {
   if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 3) {
     setFetching(true);
   }
-}
- */
+} */
+
   return(
     <>
     {/* создание нового персонажа */}

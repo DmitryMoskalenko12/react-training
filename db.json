@@ -436,6 +436,15 @@
       "size": 95756,
       "type": "image/png",
       "id": 99
+    },
+    {
+      "name": "Фото 1.png",
+      "lastModified": 1667767511655,
+      "lastModifiedDate": "2022-11-06T20:45:11.655Z",
+      "webkitRelativePath": "",
+      "size": 95756,
+      "type": "image/png",
+      "id": 100
     }
   ]
 }
