@@ -27,7 +27,7 @@ function dragOverHandler(e) {
 function dropHandler(e, card) {
   e.preventDefault()
   setCardList(cardList.map(c => {
-    if (c.id === card.id) {
+    if (c.id === card.id) { 
       return {...c, order: currentCard.order}
     }
     if (c.id === currentCard.id) {
@@ -55,6 +55,7 @@ const sortCards = (a, b) =>{
          onDragEnd={e => dragEndHandler(e)}
          onDragOver={e => dragOverHandler(e)}
          onDrop={e => dropHandler(e, card)}
+
          draggable = {true}
          className={'card'}>
           {card.text}
