@@ -8,6 +8,27 @@ const Upload = () =>{
   const filePicker = useRef(null);
   const {request} = useHttp()
 
+  /* Как отправить на сервер несколько файлов!!!!! */
+  
+  /* <input type="file" multiple />, FormData() и fetch().   const formData = new FormData();
+  const photos = document.querySelector('input[type="file"][multiple]');
+
+  formData.append('title', 'Мой отпуск в Вегасе');
+  for (let i = 0; i < photos.files.length; i++) {
+  formData.append('photos', photos.files[i]);
+  }
+
+  try {
+  const response = await fetch('https://example.com/posts', {
+  method: 'POST',
+  body: formData
+  });
+  const result = await response.json();
+  console.log('Успех:', JSON.stringify(result));
+  } catch (error) {
+  console.error('Ошибка:', error);
+  } */
+
   const handleChange = (e) =>{
     setSelectedFile(e.target.files[0])
   }

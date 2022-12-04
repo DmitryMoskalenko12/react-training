@@ -27,10 +27,10 @@ function dragOverHandler(e) {
 function dropHandler(e, card) {
   e.preventDefault()
   setCardList(cardList.map(c => {
-    if (c.id === card.id) { 
+    if (c.id === card.id) { /* карточке в которую хотим закинуть присва номер той которую держим */ 
       return {...c, order: currentCard.order}
     }
-    if (c.id === currentCard.id) {
+    if (c.id === currentCard.id) { /* карточке которую держим записываем номер той карточки в которую хотим закинуть */
       return {...c, order: card.order}
     }
     return c
@@ -45,11 +45,13 @@ const sortCards = (a, b) =>{
     return -1
   }
 }
+
   return(
     <div className="cards">
       {
         cardList.sort(sortCards).map(card =>
         <div 
+         key={card.id}
          onDragStart={e => dragStartHandler(e, card)}
          onDragLeave={e => dragEndHandler(e)}
          onDragEnd={e => dragEndHandler(e)}

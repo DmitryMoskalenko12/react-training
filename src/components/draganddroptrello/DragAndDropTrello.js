@@ -10,7 +10,7 @@ const [boards, setBoards] = useState([
 const [currentBoard, setCurrentBoard] = useState(null)
 const [currentItem, setCurrentItem] = useState(null)
 
-function dragStartHandler(e, board, item) {
+function dragStartHandler(board, item) {
   setCurrentBoard(board)
   setCurrentItem(item)
 }
@@ -35,7 +35,8 @@ function dropHandler(e, board, item) {
   e.preventDefault()
   const currentIndex = currentBoard.items.indexOf(currentItem)
   currentBoard.items.splice(currentIndex, 1)
-  const dropIndex = board.items.indexOf(item)
+
+  const dropIndex = board.items.indexOf(item) /* в ту доску в которую я бросил задачу */
   board.items.splice(dropIndex + 1, 0, currentItem)
 
   setBoards(boards.map(b => {
@@ -51,7 +52,6 @@ function dropHandler(e, board, item) {
 const dropCardHadler = (e, board) =>{
   board.items.push(currentItem)
   const currentIndex = currentBoard.items.indexOf(currentItem)
-
   currentBoard.items.splice(currentIndex, 1)
   
   setBoards(boards.map(b => {
@@ -65,18 +65,19 @@ const dropCardHadler = (e, board) =>{
   }))
   e.target.style.boxShadow = 'none'
 }
+
   return(
     <div className='trello'>
      {
       boards.map(board =>
-        <div className='board'  
+        <div key={board.id} className='board'  
              onDragOver={e => dragOverHandler(e)}
              onDrop={e => dropCardHadler(e, board)}>
          <div className='board__title'>{board.title}</div>
          {
           board.items.map(item =>
-           <div 
-           onDragStart={e => dragStartHandler(e, board, item)}
+           <div key={item.id}
+           onDragStart={e => dragStartHandler(board, item)}
            onDragLeave={e => dragLeaveHandler(e)}
            onDragEnd={e => dragEndHandler(e)}
            onDragOver={e => dragOverHandler(e)}
